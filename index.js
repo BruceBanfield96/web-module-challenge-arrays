@@ -46,8 +46,8 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  return [...array];
 }
 
 
@@ -63,8 +63,12 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(array){
+  if (array.length === 31){
+    return true;
+  } else {
+    return false;
+  }
  }
 
 
@@ -82,9 +86,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(array,string){
+  array.unshift(string)
+  return array;
  }
+
+ console.log (addFlavor (originalFlavors, 'Rainbow Sherbert'));
 
 
 
@@ -100,10 +107,12 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
-}
+function removeLastFlavor(array){
+ array.pop ();
+ return array;
 
+}
+ console.log (removeLastFlavor (originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -118,9 +127,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, number){
+  return array [number];
 }
+
+console.log (getFlavorByIndex (originalFlavors, 2));
 
 
 
@@ -138,8 +149,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === flavor) {
+      array.splice (i, 1);
+    }
+  }
+  return array;
 }
 
 
@@ -163,8 +179,14 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, flavor){
+  let filteredArray = [];
+  for ( let i = 0; i < array.length; i++){
+    if(array[i].includes(flavor)){
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
 }
 
 
